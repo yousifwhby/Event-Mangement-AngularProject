@@ -1,0 +1,28 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">title</th>
+            <th scope="col">date</th>
+            <th scope="col">main speaker</th>
+            <th scope="col">speakers</th>
+            <th scope="col">students</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{event.title}}</td>
+            <td>{{event.date|date:"short"}}</td>
+            <td>{{event.mainSpeakerID.username}}</td>
+            <td>
+                <tr *ngFor="let speaker of event.otherSpeakersID ">
+                    <td>{{speaker.username}}</td>
+                </tr>
+            </td>
+            <td>
+                <tr *ngFor="let student of event.studentsID ">
+                    <td>{{student.Email}}</td>
+                </tr>
+            </td>
+        </tr>
+    </tbody>
+</table>
